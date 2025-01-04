@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -169,6 +170,22 @@ namespace HWPDotNetCore.ConsoleApp
             Console.WriteLine(result == 1 ? "success" : "fail");
         }
 
-       
+       public void Delete()
+        {
+            Console.WriteLine("Blogid: ");
+            string id= Console.ReadLine();
+
+            SqlConnection connection = new SqlConnection(_connectionString);        
+            connection.Open();
+            string query = @"DELETE FROM [dbo].[Tbl_Blog]
+      WHERE BlogId = @BlogId";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@BlogId", id);
+            int result = cmd.ExecuteNonQuery();
+
+            connection.Close();
+
+            Console.WriteLine(result == 1 ? "deleted" : "no data found");
+        }
     }
 }

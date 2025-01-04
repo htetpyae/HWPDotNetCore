@@ -18,7 +18,8 @@ internal class Program
         AdoDotNetExample ad = new AdoDotNetExample();
         //ad.Create();
        // ad.Edit();
-        ad.Update();
+       // ad.Update();
+        ad.Delete();
        Console.ReadKey();
     }
 }
