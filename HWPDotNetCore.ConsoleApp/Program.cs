@@ -15,11 +15,19 @@ internal class Program
         //hhahhh
 
 
-        AdoDotNetExample ad = new AdoDotNetExample();
+      // AdoDotNetExample ad = new AdoDotNetExample();
         //ad.Create();
        // ad.Edit();
        // ad.Update();
-        ad.Delete();
+        //ad.Delete();
+
+        DapperExample de = new DapperExample();
+        // de.Read();
+        // de.Create("c#","slh","ccc");
+        //de.Delete(13);
+        //de.Update(3, "java", "hh", "abak");
+        de.Edit(4);
+        de.Edit(2);
        Console.ReadKey();
     }
 }
