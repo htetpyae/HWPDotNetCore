@@ -38,8 +38,8 @@ namespace HWPDotNetCore.ConsoleApp
             while (reader.Read())
             {
                 Console.WriteLine(value: reader[name: "BlogId"]);
-                Console.WriteLine(value: reader[name: "BlogId"]);
-                Console.WriteLine(value: reader[name: "BlogId"]);
+                Console.WriteLine(value: reader[name: "BlogTitle"]);
+                Console.WriteLine(value: reader[name: "BlogAuthor"]);
                 Console.WriteLine(value: reader[name: "BlogContent"]);
                 //Console.WriteLine(value: dr[columnName: "DeleteFlag"]);
             }
@@ -111,7 +111,7 @@ namespace HWPDotNetCore.ConsoleApp
       ,[DeleteFlag]
   FROM [dbo].[Tbl_Blog] where BlogId = @BlogId";
 
-            SqlCommand cmd = new SqlCommand(@query, connection);
+            SqlCommand cmd = new SqlCommand(query, connection);
             cmd.Parameters.AddWithValue("@BlogId", id);
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);  
             DataTable dt = new DataTable(); 
